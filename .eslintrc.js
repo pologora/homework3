@@ -4,24 +4,25 @@ module.exports = {
     commonjs: true,
     es2021: true,
   },
-  extends: 'airbnb-base',
+  extends: "airbnb-base",
   overrides: [
     {
       env: {
         node: true,
       },
-      files: ['.eslintrc.{js,cjs}'],
+      files: [".eslintrc.{js,cjs}"],
       parserOptions: {
-        sourceType: 'script',
+        sourceType: "script",
       },
     },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
+    ecmaVersion: "latest",
   },
   rules: {
-    'linebreak-style': ['off'],
-    'implicit-arrow-linebreak': ['off', 'beside'],
-    'operator-linebreak': ['off', 'after'],
+    "linebreak-style": ["off"],
+    "implicit-arrow-linebreak": ["off", "beside"],
+    "operator-linebreak": ["off", "after"],
+    "no-plusplus": "off",
   },
 };
