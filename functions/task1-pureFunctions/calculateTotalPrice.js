@@ -1,5 +1,4 @@
-const sum = (arr) => arr.reduce((acc, i) => acc + i, 0);
-
-const calculateTotalPrice = (products) => sum(products);
+const calculateTotalPrice = (products) =>
+  products.reduce((acc, product) => acc + product.price, 0);
 
 module.exports = calculateTotalPrice;
