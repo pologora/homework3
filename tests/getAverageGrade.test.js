@@ -9,6 +9,9 @@ describe('Get average grade', () => {
       { name: 'Liza', grade: [82, 97, 86] },
       { name: 'Susan', grade: [77, 80, 82] },
     ];
-    expect(getAverageGrade(students)).toBe(80);
+    expect(getAverageGrade(students)).toBe(86);
+    expect(getAverageGrade([{ grade: [10, 20] }, { grade: [10, 20] }])).toBe(
+      15,
+    );
   });
 });
