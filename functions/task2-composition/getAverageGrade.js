@@ -1,16 +1,12 @@
-const getLength = (arr) => arr.length;
+const compose = require('../helpers/compose');
 
-const studentAvarageGrade = (grades) =>
-  grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
+const getAllGrades = (arr) => arr.flatMap((student) => student.grade);
 
-const sumGrades = (students) =>
-  students.reduce(
-    (acc, student) => acc + studentAvarageGrade(student.grade),
-    0,
-  );
+const getAverage = (arr) =>
+  arr.reduce((acc, item) => acc + item, 0) / arr.length;
 
-const divide = (a, b) => Math.floor(a / b);
+const getRound = (num) => Math.round(num);
 
-const getAverageGrade = (arr) => divide(sumGrades(arr), getLength(arr));
+const getAverageGrade = compose(getAllGrades, getAverage, getRound);
 
 module.exports = getAverageGrade;
